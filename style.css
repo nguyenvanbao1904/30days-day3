@@ -84,3 +84,8 @@ h2{
         opacity: 1;
     }
 }
+@media(max-width:740px){
+    .modal-container{
+        width: 350px;
+    }
+}

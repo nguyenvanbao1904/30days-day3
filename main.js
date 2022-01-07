@@ -13,6 +13,12 @@ btnClose.addEventListener('click',open)
 Modal.addEventListener('click',function(e){
         if(e.target==e.currentTarget){
             open()
-        
         }
 })
+document.onkeydown = function(e){
+    switch (e.which) {
+        case 27:
+            Modal.className='modal hiden'
+            break;
+    }
+}

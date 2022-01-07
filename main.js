@@ -3,10 +3,18 @@ var Modal = document.querySelector('.modal')
 var closeModal = document.querySelector('.modal-header i')
 var btnClose = document.querySelector('.modal-footer button')
 
-var open = function(e){
+var open1 = function(e){
     Modal.classList.toggle('hiden')
 }
-openModal.addEventListener('click',open)
+
+var open = function(e){
+    Modal.classList.toggle('hiden')
+    var dk = confirm('Are you sure ?')
+            if(dk===true){
+                Modal.className='modal hiden'
+            }
+}
+openModal.addEventListener('click',open1)
 closeModal.addEventListener('click',open)
 btnClose.addEventListener('click',open)
 
@@ -18,7 +26,10 @@ Modal.addEventListener('click',function(e){
 document.onkeydown = function(e){
     switch (e.which) {
         case 27:
-            Modal.className='modal hiden'
+            var dk = confirm('Are you sure ?')
+            if(dk===true){
+                Modal.className='modal hiden'
+            }
             break;
     }
 }

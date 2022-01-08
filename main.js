@@ -3,24 +3,22 @@ var Modal = document.querySelector('.modal')
 var closeModal = document.querySelector('.modal-header i')
 var btnClose = document.querySelector('.modal-footer button')
 
-var open1 = function(e){
-    Modal.classList.toggle('hiden')
-}
-
 var open = function(e){
     Modal.classList.toggle('hiden')
-    var dk = confirm('Are you sure ?')
-            if(dk===true){
-                Modal.className='modal hiden'
-            }
 }
-openModal.addEventListener('click',open1)
-closeModal.addEventListener('click',open)
-btnClose.addEventListener('click',open)
+var close = function(e){
+    var dk = confirm('Are you sure ?')
+    if(dk===true){
+        Modal.className='modal hiden'
+    }
+}
+openModal.addEventListener('click',open)
+closeModal.addEventListener('click',close)
+btnClose.addEventListener('click',close)
 
 Modal.addEventListener('click',function(e){
         if(e.target==e.currentTarget){
-            open()
+            close()
         }
 })
 document.onkeydown = function(e){
